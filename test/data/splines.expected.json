@@ -1,0 +1,213 @@
+{
+  "header": {
+    "$ACADVER": "AC1014",
+    "$HANDSEED": "FFFF",
+    "$MEASUREMENT": 1
+  },
+  "tables": {
+    "viewPort": {
+      "handle": "8",
+      "ownerHandle": "0",
+      "viewPorts": [
+        {
+          "ownerHandle": "8",
+          "name": "*ACTIVE",
+          "lowerLeftCorner": {
+            "x": 0,
+            "y": 0
+          },
+          "upperRightCorner": {
+            "x": 1,
+            "y": 1
+          },
+          "center": {
+            "x": 210,
+            "y": 148.5
+          },
+          "snapBasePoint": {
+            "x": 0,
+            "y": 0
+          },
+          "snapSpacing": {
+            "x": 10,
+            "y": 10
+          },
+          "gridSpacing": {
+            "x": 10,
+            "y": 10
+          },
+          "viewDirectionFromTarget": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          },
+          "viewTarget": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "lensLength": 50,
+          "frontClippingPlane": 0,
+          "backClippingPlane": 0,
+          "snapRotationAngle": 0,
+          "viewTwistAngle": 0
+        }
+      ]
+    },
+    "lineType": {
+      "handle": "5",
+      "ownerHandle": "0",
+      "lineTypes": {
+        "BYBLOCK": {
+          "name": "BYBLOCK",
+          "description": "",
+          "patternLength": 0
+        },
+        "BYLAYER": {
+          "name": "BYLAYER",
+          "description": "",
+          "patternLength": 0
+        },
+        "CONTINUOUS": {
+          "name": "CONTINUOUS",
+          "description": "Solid line",
+          "patternLength": 0
+        }
+      }
+    },
+    "layer": {
+      "handle": "2",
+      "layers": {
+        "0": {
+          "name": "0"
+        },
+        "Calque_1": {
+          "name": "Calque_1"
+        }
+      }
+    }
+  },
+  "blocks": {
+    "*MODEL_SPACE": {
+      "handle": "20",
+      "ownerHandle": "1F",
+      "layer": "0",
+      "name": "*MODEL_SPACE",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "name2": "*MODEL_SPACE",
+      "xrefPath": ""
+    },
+    "*PAPER_SPACE": {
+      "handle": "1C",
+      "ownerHandle": "1B",
+      "paperSpace": true,
+      "layer": "0",
+      "name": "*PAPER_SPACE",
+      "xrefPath": ""
+    }
+  },
+  "entities": [
+    {
+      "type": "SPLINE",
+      "knots": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "control_points": [
+        {
+          "x": 12.76163,
+          "y": -17.352211,
+          "z": 0
+        },
+        {
+          "x": 8.961394,
+          "y": -14.152012,
+          "z": 0
+        },
+        {
+          "x": 2.850177,
+          "y": -21.898612,
+          "z": 0
+        },
+        {
+          "x": 3.600223,
+          "y": -17.973369,
+          "z": 0
+        }
+      ],
+      "fit_points": [],
+      "knot_tolerance": 1e-7,
+      "control_point_tolerance": 1e-7,
+      "fit_tolerance": 1e-10,
+      "handle": "100",
+      "layer": "Calque_1",
+      "colorIndex": 7,
+      "color": 16777215,
+      "closed": false,
+      "periodic": false,
+      "rational": false,
+      "planar": true,
+      "linear": false,
+      "degree": 3
+    },
+    {
+      "type": "SPLINE",
+      "knots": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "control_points": [
+        {
+          "x": 3.600223,
+          "y": -17.973369,
+          "z": 0
+        },
+        {
+          "x": 4.35027,
+          "y": -14.048126,
+          "z": 0
+        },
+        {
+          "x": 7.683319,
+          "y": -11.674756,
+          "z": 0
+        },
+        {
+          "x": 12.800793,
+          "y": -13.798111,
+          "z": 0
+        }
+      ],
+      "fit_points": [],
+      "knot_tolerance": 1e-7,
+      "control_point_tolerance": 1e-7,
+      "fit_tolerance": 1e-10,
+      "handle": "101",
+      "layer": "Calque_1",
+      "colorIndex": 7,
+      "color": 16777215,
+      "closed": false,
+      "periodic": false,
+      "rational": false,
+      "planar": true,
+      "linear": false,
+      "degree": 3
+    }
+  ]
+}

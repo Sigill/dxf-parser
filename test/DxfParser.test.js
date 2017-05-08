@@ -28,7 +28,7 @@ describe('Parser', function() {
 			tables = result.tables;
 			fs.writeFileSync(path.join(__dirname, 'data', 'layer-table.actual.json'), JSON.stringify(tables.layer, null, 2));
 			fs.writeFileSync(path.join(__dirname, 'data', 'ltype-table.actual.json'), JSON.stringify(tables.lineType, null, 2));
-            fs.writeFileSync(path.join(__dirname, 'data', 'viewport-table.actual.json'), JSON.stringify(tables.viewPort, null, 2));
+			fs.writeFileSync(path.join(__dirname, 'data', 'viewport-table.actual.json'), JSON.stringify(tables.viewPort, null, 2));
 			done();
 		});
 	});
@@ -37,8 +37,8 @@ describe('Parser', function() {
 		should.exist(tables);
 		tables.should.have.property('layer');
 
-        var expectedOutputFilePath = path.join(__dirname,'data','layer-table.expected.json');
-        
+		var expectedOutputFilePath = path.join(__dirname,'data','layer-table.expected.json');
+
 		var expected = fs.readFileSync(expectedOutputFilePath, {encoding: 'utf8'});
 		tables.layer.should.eql(JSON.parse(expected));
 	});
@@ -47,17 +47,17 @@ describe('Parser', function() {
 		should.exist(tables);
 		tables.should.have.property('lineType');
 
-        var expectedOutputFilePath = path.join(__dirname,'data','ltype-table.expected.json');
+		var expectedOutputFilePath = path.join(__dirname,'data','ltype-table.expected.json');
 
 		var expected = fs.readFileSync(expectedOutputFilePath, {encoding: 'utf8'});
 		tables.lineType.should.eql(JSON.parse(expected));
 	});
-    
-    it('should parse the dxf viewPort table', function() {
+
+	it('should parse the dxf viewPort table', function() {
 		should.exist(tables);
 		tables.should.have.property('viewPort');
 
-        var expectedOutputFilePath = path.join(__dirname,'data','viewport-table.expected.json');
+		var expectedOutputFilePath = path.join(__dirname,'data','viewport-table.expected.json');
 
 		var expected = fs.readFileSync(expectedOutputFilePath, {encoding: 'utf8'});
 		tables.viewPort.should.eql(JSON.parse(expected));
@@ -80,7 +80,7 @@ describe('Parser', function() {
 		var expected = fs.readFileSync(path.join(__dirname,'data','blocks.expected.json'), {encoding: 'utf8'});
 		dxf.should.eql(JSON.parse(expected));
 	});
-	
+
 	it('should parse a simple BLOCKS section', function() {
 		var file = fs.readFileSync(path.join(__dirname, 'data', 'blocks2.dxf'), 'utf8');
 
@@ -98,9 +98,9 @@ describe('Parser', function() {
 		var expected = fs.readFileSync(path.join(__dirname, 'data', 'blocks2.expected.json'), {encoding: 'utf8'});
 		dxf.should.eql(JSON.parse(expected));
 	});
-    
-    it('should parse POLYLINES', function() {
-        var file = fs.readFileSync(path.join(__dirname, 'data', 'polylines.dxf'), 'utf8');
+
+	it('should parse POLYLINES', function() {
+		var file = fs.readFileSync(path.join(__dirname, 'data', 'polylines.dxf'), 'utf8');
 
 		var parser = new DxfParser();
 		var dxf;
@@ -115,5 +115,23 @@ describe('Parser', function() {
 
 		var expected = fs.readFileSync(path.join(__dirname, 'data', 'polylines.expected.json'), {encoding: 'utf8'});
 		dxf.should.eql(JSON.parse(expected));
-    });
+	});
+
+	it('should parse SPLINES', function() {
+		var file = fs.readFileSync(path.join(__dirname, 'data', 'splines.dxf'), 'utf8');
+
+		var parser = new DxfParser();
+		var dxf;
+		try {
+			dxf = parser.parseSync(file);
+			fs.writeFileSync(path.join(__dirname, 'data', 'splines.actual.json'), JSON.stringify(dxf, null, 2));
+		}catch(err) {
+			should.not.exist(err);
+		}
+		should.exist(dxf);
+
+
+		var expected = fs.readFileSync(path.join(__dirname, 'data', 'splines.expected.json'), {encoding: 'utf8'});
+		dxf.should.eql(JSON.parse(expected));
+	});
 });
